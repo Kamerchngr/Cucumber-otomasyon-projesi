@@ -1,0 +1,182 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=7140, tid=0x0000000000001084
+#
+# JRE version:  (8.0_301-b09) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.301-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000027888255800):  JavaThread "Unknown thread" [_thread_in_vm, id=4228, stack(0x000000ea35c00000,0x000000ea35d00000)]
+
+Stack: [0x000000ea35c00000,0x000000ea35d00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x32ed79]
+V  [jvm.dll+0x275722]
+V  [jvm.dll+0x2763cd]
+V  [jvm.dll+0x26ce05]
+V  [jvm.dll+0x509d]
+V  [jvm.dll+0x3c964d]
+V  [jvm.dll+0x3ca3ca]
+V  [jvm.dll+0x3c6367]
+V  [jvm.dll+0xfcdcf]
+V  [jvm.dll+0x20a0bb]
+V  [jvm.dll+0x238ae7]
+V  [jvm.dll+0x162876]
+C  [java.exe+0x2312]
+C  [java.exe+0x15f54]
+C  [KERNEL32.DLL+0x17974]
+C  [ntdll.dll+0x5a2f1]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000027888255800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4228, stack(0x000000ea35c00000,0x000000ea35d00000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000082000000, size: 2016 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 37888K, used 655K [0x00000000d6000000, 0x00000000d8a00000, 0x0000000100000000)
+  eden space 32768K, 2% used [0x00000000d6000000,0x00000000d60a3d80,0x00000000d8000000)
+  from space 5120K, 0% used [0x00000000d8500000,0x00000000d8500000,0x00000000d8a00000)
+  to   space 5120K, 0% used [0x00000000d8000000,0x00000000d8000000,0x00000000d8500000)
+ ParOldGen       total 86016K, used 0K [0x0000000082000000, 0x0000000087400000, 0x00000000d6000000)
+  object space 86016K, 0% used [0x0000000082000000,0x0000000082000000,0x0000000087400000)
+ Metaspace       used 778K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000027898f00000,0x0000027899300000] byte_map_base: 0x0000027898af0000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000050b77fe0
+ Begin Bits: [0x00000278995a0000, 0x000002789b520000)
+ End Bits:   [0x000002789b520000, 0x000002789d4a0000)
+
+Polling page: 0x0000027888350000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000027889b40000, 0x0000027889db0000, 0x0000027898b40000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.022 loading class java/lang/Short
+Event: 0.022 loading class java/lang/Short done
+Event: 0.022 loading class java/lang/Integer
+Event: 0.022 loading class java/lang/Integer done
+Event: 0.022 loading class java/lang/Long
+Event: 0.022 loading class java/lang/Long done
+Event: 0.023 loading class java/lang/NullPointerException
+Event: 0.023 loading class java/lang/NullPointerException done
+Event: 0.023 loading class java/lang/ArithmeticException
+Event: 0.023 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff7ff5f0000 - 0x00007ff7ff637000 	C:\Program Files\Java\jdk1.8.0_301\bin\java.exe
+0x00007ffe48940000 - 0x00007ffe48b2d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffe45b80000 - 0x00007ffe45c33000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffe44a20000 - 0x00007ffe44cb5000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffe460d0000 - 0x00007ffe46174000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffe45c70000 - 0x00007ffe45d0e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffe48870000 - 0x00007ffe4890e000 	C:\Windows\System32\sechost.dll
+0x00007ffe48610000 - 0x00007ffe4872f000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffe462e0000 - 0x00007ffe46478000 	C:\Windows\System32\USER32.dll
+0x00007ffe45b50000 - 0x00007ffe45b70000 	C:\Windows\System32\win32u.dll
+0x00007ffe462b0000 - 0x00007ffe462d9000 	C:\Windows\System32\GDI32.dll
+0x00007ffe44ce0000 - 0x00007ffe44e7c000 	C:\Windows\System32\gdi32full.dll
+0x00007ffe44f30000 - 0x00007ffe44fd0000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffe45960000 - 0x00007ffe45a5a000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffe36100000 - 0x00007ffe36379000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.2114_none_de6e8966534dbac6\COMCTL32.dll
+0x00007ffe47cd0000 - 0x00007ffe47ffd000 	C:\Windows\System32\combase.dll
+0x00007ffe45a60000 - 0x00007ffe45ae2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffe45c40000 - 0x00007ffe45c6e000 	C:\Windows\System32\IMM32.DLL
+0x00007ffe38eb0000 - 0x00007ffe38ec5000 	C:\Program Files\Java\jdk1.8.0_301\jre\bin\vcruntime140.dll
+0x00007ffe1ebb0000 - 0x00007ffe1ec4b000 	C:\Program Files\Java\jdk1.8.0_301\jre\bin\msvcp140.dll
+0x0000000050390000 - 0x0000000050bf0000 	C:\Program Files\Java\jdk1.8.0_301\jre\bin\server\jvm.dll
+0x00007ffe45b70000 - 0x00007ffe45b78000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffe34370000 - 0x00007ffe34379000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffe42040000 - 0x00007ffe42064000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffe42390000 - 0x00007ffe4239a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffe48740000 - 0x00007ffe487ad000 	C:\Windows\System32\WS2_32.dll
+0x00007ffe42010000 - 0x00007ffe4203d000 	C:\Windows\SYSTEM32\winmmbase.dll
+0x00007ffe45720000 - 0x00007ffe4576a000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffe44920000 - 0x00007ffe44931000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffe38ea0000 - 0x00007ffe38eb0000 	C:\Program Files\Java\jdk1.8.0_301\jre\bin\verify.dll
+0x00007ffe2f9f0000 - 0x00007ffe2fa1b000 	C:\Program Files\Java\jdk1.8.0_301\jre\bin\java.dll
+0x00007ffe295e0000 - 0x00007ffe29610000 	C:\Program Files\Java\jdk1.8.0_301\jre\bin\instrument.dll
+0x00007ffe38540000 - 0x00007ffe38558000 	C:\Program Files\Java\jdk1.8.0_301\jre\bin\zip.dll
+0x00007ffe432a0000 - 0x00007ffe4348d000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dorg.jetbrains.run.directory=C:\Users\KAMER\IdeaProjects\cucumberDeneme\src\test\java -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\lib\idea_rt.jar=63557:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2\bin -Dfile.encoding=UTF-8 
+java_command: cucumber.api.cli.Main --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome C:/Users/KAMER/IdeaProjects/cucumberDeneme/src/test/java/LoginTest.feature
+java_class_path (initial): C:\Program Files\Java\jdk1.8.0_301\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_301\jre\lib\rt.jar;C:\Users\KAMER\IdeaProjects\cucumberDeneme\target\classes;C:\Users\KAMER\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\KAMER\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\KAMER\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\KAMER\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\KAMER\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\KAMER\.m2\re
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\KAMER\AppData\Local\Microsoft\WindowsApps;C:\Users\KAMER\AppData\Local\GitHubDesktop\bin
+USERNAME=KAMER
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17763 (10.0.17763.2090)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 158 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8251860k(1607260k free), swap 8251860k(191284k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.301-b09) for windows-amd64 JRE (1.8.0_301-b09), built on Jun  9 2021 06:46:21 by "java_re" with MS VC++ 15.9 (VS2017)
+
+time: Mon Sep  6 15:05:09 2021
+timezone: Türkiye Standart Saati
+elapsed time: 0.044088 seconds (0d 0h 0m 0s)
+
